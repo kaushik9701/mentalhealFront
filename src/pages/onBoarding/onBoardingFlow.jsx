@@ -1,4 +1,4 @@
-// 
+
 
 
 import { useEffect, useState } from "react";
@@ -24,32 +24,10 @@ export function OnboardingFlow({ob: setShowOnboarding}) {
   if (onboardingComplete) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-lg">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/5 ">
       <div className="relative w-full max-w-2xl mx-4">
         <div className="absolute inset-0 rounded-3xl overflow-hidden">
-          {/* Cosmic Background */}
-          <div className="absolute inset-0 z-0">
-            {/* Stars */}
-            {[...Array(150)].map((_, i) => (
-              <div 
-                key={i}
-                className="absolute rounded-full bg-white animate-pulse"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  width: `${Math.random() * 3}px`,
-                  height: `${Math.random() * 3}px`,
-                  opacity: Math.random() * 0.7 + 0.3,
-                  animationDuration: `${Math.random() * 3 + 2}s`
-                }}
-              />
-            ))}
-            
-            {/* Large Nebula */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-900 rounded-full mix-blend-screen opacity-30 blur-[100px]" />
-            <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-indigo-900 rounded-full mix-blend-screen opacity-30 blur-[100px]" />
-          </div>
-          
+         
           {/* Progress Bar */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gray-800 z-10">
             <motion.div 
