@@ -4,7 +4,7 @@ import { FaPlus } from 'react-icons/fa';
 
 const ObjectivesList = ({ objectives, onSelectObjective, onAddObjective }) => {
   return (
-    <div className="max-w-6xl mt-14 mx-auto">
+    <div className="max-w-6xl mt-28 mx-auto">
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-purple-200">Objective Focus</h1>
         <p className="text-purple-400 mt-1">Your cosmic objectives</p>

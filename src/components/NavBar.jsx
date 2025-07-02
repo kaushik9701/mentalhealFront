@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"; 
 import { useSelector } from 'react-redux';
 import { logout } from '../pages/logout';
+import { FiCloud, FiCloudOff } from "react-icons/fi";
 
-function NavBar() {
+
+function NavBar({ showClouds, toggleClouds }) {
     const { isAuthenticated } = useSelector(state => state.user);
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,8 +28,8 @@ function NavBar() {
             {/* Desktop Navigation */}
             <nav className={`fixed w-full mt-4 z-50 transition-all duration-500 ${
                 scrolled 
-                    ? 'bg-white/10 backdrop-blur-lg border border-white/20  rounded-2xl p-3 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(128,0,128,0.3)]' 
-                    : 'bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg rounded-2xl p-3 ring-1 ring-white/10'
+                    ? 'bg-white/10  border border-white/20  rounded-2xl p-3 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(128,0,128,0.3)]' 
+                    : 'bg-white/10  border border-white/20 shadow-lg rounded-2xl p-3 ring-1 ring-white/10'
             }`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center">
@@ -87,6 +89,16 @@ function NavBar() {
                                     </button>
                                 </>
                             )}
+                             <button
+  onClick={toggleClouds}
+  className={`text-2xl p-2 rounded-lg transition-colors duration-300 ${
+    showClouds ? " text-white" : "bg-gray-600 hover:bg-gray-700 text-white"
+  }`}
+  title={showClouds ? "Disable Clouds" : "Enable Clouds"}
+>
+  {showClouds ? <FiCloud /> : <FiCloudOff />}
+</button>
+
                         </div>
                         
                         {/* Mobile menu button */}
@@ -171,15 +183,21 @@ function NavBar() {
                                 </button>
                             </>
                         )}
+                        <button
+  onClick={toggleClouds}
+  className={`text-2xl p-2 rounded-lg transition-colors duration-300 ${
+    showClouds ? " text-white" : "bg-gray-600 hover:bg-gray-700 text-white"
+  }`}
+  title={showClouds ? "Disable Clouds" : "Enable Clouds"}
+>
+  {showClouds ? <FiCloud /> : <FiCloudOff />}
+</button>
+
                     </div>
                 </div>
             </nav>
             
-            {/* Purple glow effect at the bottom of navbar */}
-            <div className="fixed top-0 left-0 w-full h-1 z-50">
-                <div className="absolute bottom-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-30 "></div>
-                <div className="absolute bottom-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-70"></div>
-            </div>
+            
         </>
     );
 }

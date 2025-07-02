@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCalendarAlt, FaTasks, FaCheck } from 'react-icons/fa';
-import ProgressCircle from './ProgressCircle';
+
 import { formatDate } from '../../utils/dateUtils';
 
 const ObjectiveCard = ({ objective, onClick }) => {
@@ -8,13 +8,8 @@ const ObjectiveCard = ({ objective, onClick }) => {
   const title = objective.objective; 
   const createdDate = objective.createdAt; 
   const lastCheckin = objective.lastCheckIn;
-  console.log("objCard:", title, createdDate, lastCheckin);
-  
-  // Calculate progress from check-ins
-  const progress = objective.checkIns 
-    ? Math.round((objective.checkIns.filter(c => c.status === 'IMPLEMENTED').length / objective.checkIns.length) * 100)
-    : 0;
 
+  
   // Create tasks from suggestions
   const tasks = objective.suggestions?.map((suggestion, index) => ({
     id: `suggestion-${index}`,
@@ -30,7 +25,7 @@ const ObjectiveCard = ({ objective, onClick }) => {
       <div className="flex-grow">
         <div className="flex justify-between items-start mb-4">
           <h3 className="font-bold text-xl text-purple-200">{title}</h3>
-          <ProgressCircle progress={progress} />
+        
         </div>
         
         <div className="mb-4">

@@ -99,7 +99,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
   {/* Background elements */}
   <h1 
     ref={h1Ref} 
@@ -107,9 +107,9 @@ const Login = () => {
   >
     MentalHeal
   </h1>
-  <div className="absolute">
+  {/* <div className="absolute">
     <GreenWaveShader />
-  </div>
+  </div> */}
 
   {/* Login form */}
   <div className="relative z-10 w-80 max-w-md p-5 mt-20 bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/30 transform hover:scale-105 transition">

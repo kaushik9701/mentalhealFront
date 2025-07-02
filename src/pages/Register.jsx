@@ -85,12 +85,12 @@ function Signup() {
   }, []); 
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen  flex items-center justify-center relative overflow-hidden">
         <ToastContainer position="top-right" autoClose={5000} />
       {/* Particle Background */}
       <h1 ref={h1Ref} className='absolute w-full min-h-screen flex justify-center pt-28 z-10 text-purple-600 text-6xl md:text-7xl lg:text-8xl font-bold'>MentalHeal</h1>
 
-      <div className='absolute'><GreenWaveShader/></div>
+      {/* <div className='absolute'><GreenWaveShader/></div> */}
 
      
 

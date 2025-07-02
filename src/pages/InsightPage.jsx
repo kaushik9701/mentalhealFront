@@ -57,11 +57,11 @@ export default function InsightPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#1a1a40] to-[#302b63] text-white p-4 md:p-6 relative overflow-hidden">
+    <div className="min-h-screen  text-white p-4 md:p-6 relative overflow-hidden">
       {/* Cosmic Background Elements */}
       <div className="absolute inset-0 z-0">
         {/* Stars */}
-        {[...Array(200)].map((_, i) => (
+        {/* {[...Array(200)].map((_, i) => (
           <div 
             key={i}
             className="absolute rounded-full bg-white animate-pulse"
@@ -74,7 +74,7 @@ export default function InsightPage() {
               animationDuration: `${Math.random() * 3 + 2}s`
             }}
           />
-        ))}
+        ))} */}
         
         {/* Large Nebula */}
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-900 rounded-full mix-blend-screen opacity-30 blur-[100px]" />

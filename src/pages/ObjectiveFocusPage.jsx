@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { AddFocus } from '../components/focus/addFocus';
 import axios from 'axios';
 import ObjectivesList from '../components/focus/ObjectivesList';
-import ObjectiveDetail from '../components/focus/ObjectiveDetail';
+import ObjectiveDetailPage from './focusDetail/objectiveDetailPage';
+
 
 const ObjectiveFocusPage = () => {
   const [showFocusPanel, setShowFocusPanel] = useState(false);
@@ -43,7 +44,7 @@ const ObjectiveFocusPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 p-4 md:p-8 relative">
+    <div className="min-h-screen p-4 md:p-8 relative">
       {showFocusPanel && (
         <div className="fixed inset-0 bg-black bg-opacity-60 z-40 flex items-center justify-center p-4">
           <div className="w-full max-w-lg">
@@ -60,10 +61,11 @@ const ObjectiveFocusPage = () => {
             onAddObjective={() => setShowFocusPanel(true)}
           />
         ) : (
-          <ObjectiveDetail 
+          <ObjectiveDetailPage 
             objective={selectedObjective}
             onBack={goBackToObjectives}
           />
+          
         )}
       </div>
     </div>

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { JournalEntryList } from "../components/listEntries";
 import { JournalEntryForm } from "../components/addEntry";
+import { Sparkles, Lightbulb, PencilLine } from "lucide-react";
 
 export default function JournalPage() {
   const [entries, setEntries] = useState([]);
@@ -36,15 +37,13 @@ export default function JournalPage() {
   };
 
   return (
-    <div className="flex flex-col-reverse md:flex-row min-h-[calc(100vh-5.5rem)] pt-24 bg-gradient-to-b from-[#0f0c29] via-[#1a1a40] to-[#302b63] text-white relative overflow-hidden">
-      {/* Background Blur + Particles Layer */}
-      <div className="absolute inset-0 z-0">
-        {/* Future: particles or animated canvas could go here */}
-      </div>
+    <>
+    <div className="flex flex-col-reverse md:flex-row min-h-[calc(100vh-5.5rem)] pt-24  text-white relative overflow-hidden">
+     
 
       {/* Loading Spinner */}
       {isLoading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 ">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -55,7 +54,7 @@ export default function JournalPage() {
 
       {/* Entry List Side */}
       <div className="relative z-10 mt-5 w-full md:w-2/5 lg:w-1/3 p-4 md:p-6">
-        <div className="mb-6 bg-black/30 backdrop-blur-md border border-white/10 shadow-md rounded-2xl p-6 ring-1 ring-white/10">
+        <div className="mb-6 bg-black/30  border border-white/10 shadow-md rounded-2xl p-6 ring-1 ring-white/10">
           <h1 className="text-4xl font-extrabold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
             Cosmic Journal
           </h1>
@@ -78,7 +77,7 @@ export default function JournalPage() {
         <>
           <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-purple-600 to-transparent"></div>
           <div className="relative mt-5 z-10 w-full p-4 md:p-6">
-            <div className="sticky top-4 bg-black/30 backdrop-blur-md border border-white/10 shadow-md rounded-2xl p-6 ring-1 ring-white/10">
+            <div className="sticky top-4 bg-black/30  border border-white/10 shadow-md rounded-2xl p-6 ring-1 ring-white/10">
               <h2 className="text-2xl font-bold mb-2">New Cosmic Thought</h2>
               <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4"></div>
               <JournalEntryForm onAdd={handleAdd} />
@@ -86,6 +85,50 @@ export default function JournalPage() {
           </div>
         </>
       )}
+      
     </div>
+    <div className="w-full px-4 py-6 md:px-12 lg:px-20 text-white">
+      <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg p-6 md:p-10 ring-1 ring-white/10">
+        <div className="flex flex-col lg:flex-row gap-8 items-center">
+          {/* Image or visual icon */}
+          <div className="flex-shrink-0">
+          <img
+  src="/assets/JournalAI.jpg"
+  alt="AI Insight Illustration"
+  className="w-48 h-48 object-contain rounded-xl shadow-md hidden sm:block"
+/>
+
+          </div>
+
+          {/* Textual Explanation */}
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-purple-400 flex items-center gap-2 mb-3">
+              <Sparkles className="w-6 h-6 text-pink-400" />
+              How AI Guides Your Journey
+            </h3>
+            <p className="text-purple-200 text-sm md:text-base mb-4">
+              Each journal entry is analyzed for emotional tone, recurring patterns,
+              and introspective depth. Our AI learns from your writing to provide:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-sm text-purple-300">
+              <li className="flex gap-2 items-center">
+                <Lightbulb className="w-4 h-4 text-yellow-400" /> Personalized insight summaries
+              </li>
+              <li className="flex gap-2 items-center">
+                <Sparkles className="w-4 h-4 text-pink-400" /> Mood trajectory suggestions
+              </li>
+              <li className="flex gap-2 items-center">
+                <PencilLine className="w-4 h-4 text-cyan-400" /> Writing tips to deepen your reflection
+              </li>
+            </ul>
+            <p className="text-purple-400 mt-4 text-sm">
+              Journaling regularly helps the system understand your patterns more deeply
+              — giving you meaningful and timely feedback. You just write, and we help you grow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
