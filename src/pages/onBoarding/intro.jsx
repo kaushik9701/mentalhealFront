@@ -1,77 +1,36 @@
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
 export function Step1Intro({ onNext }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      className="text-center py-8"
+      exit={{ opacity: 0, y: -10 }}
+      className="text-center py-4 px-0 md:py-7 md:px-0"
     >
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="inline-block mb-6"
-      >
-        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-4xl">
-          ✨
-        </div>
-      </motion.div>
-      
-      <motion.h2 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4"
-      >
-        Welcome to MindScape
-      </motion.h2>
-      
-      <motion.p 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="text-purple-300 mb-6 max-w-md mx-auto"
-      >
-        Your cosmic companion for mindful journaling and emotional growth
-      </motion.p>
-      
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        className="space-y-5 mb-8 max-w-lg mx-auto"
-      >
-        <div className="flex items-start">
-          <div className="mr-3 mt-1 text-xl text-purple-500">🌌</div>
-          <p className="text-left text-purple-200">
-            Explore your inner universe through reflection and insight
-          </p>
-        </div>
-        
-        <div className="flex items-start">
-          <div className="mr-3 mt-1 text-xl text-purple-500">💫</div>
-          <p className="text-left text-purple-200">
-            Discover patterns in your thoughts and emotions
-          </p>
-        </div>
-        
-        <div className="flex items-start">
-          <div className="mr-3 mt-1 text-xl text-purple-500">🚀</div>
-          <p className="text-left text-purple-200">
-            Grow toward your goals with cosmic clarity
-          </p>
-        </div>
-      </motion.div>
-      
-      <motion.button
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        onClick={onNext}
-        className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold shadow-lg transition transform hover:scale-105"
-      >
-        Begin Cosmic Journey
-      </motion.button>
+      {/* Gradient Title */}
+      <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent mb-6">
+        Understand More Than Just Your Struggles
+      </h2>
+
+      {/* Description */}
+      <p className="text-purple-200 max-w-xl mx-auto text-base md:text-lg leading-relaxed mb-6">
+        Your mind is more than what weighs it down. It holds patterns, insights, resilience — even in the chaos. Whether you're feeling stuck or thriving, there’s always something new to discover about yourself.
+      </p>
+
+      <p className="text-purple-300 max-w-xl mx-auto text-sm md:text-base leading-relaxed mb-10">
+        This space is built to reflect not just your pain, but your growth. To help you see the connections, the habits, the potential — and guide you with clarity, not noise.
+      </p>
+
+      {/* CTA Button */}
+      <button
+  onClick={onNext}
+  className="p-2 w-24 pl-9 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white transition-transform duration-200 hover:scale-110"
+  aria-label="Continue"
+>
+  <ArrowRight className="w-6 h-6  text-white" />
+</button>
     </motion.div>
   );
 }

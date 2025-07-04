@@ -28,9 +28,10 @@ function NavBar({ showClouds, toggleClouds }) {
             {/* Desktop Navigation */}
             <nav className={`fixed w-full mt-4 z-50 transition-all duration-500 ${
                 scrolled 
-                    ? 'bg-white/10  border border-white/20  rounded-2xl p-3 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(128,0,128,0.3)]' 
-                    : 'bg-white/10  border border-white/20 shadow-lg rounded-2xl p-3 ring-1 ring-white/10'
-            }`}>
+                    ? 'bg-white/10 border border-white/20 rounded-2xl p-3 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(128,0,128,0.3)] backdrop-blur-lg' 
+                    : 'bg-white/10 border border-white/20 shadow-lg rounded-2xl p-3 ring-1 ring-white/10'
+                }`}>
+
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center">
                         {/* Logo */}
@@ -90,19 +91,17 @@ function NavBar({ showClouds, toggleClouds }) {
                                 </>
                             )}
                              <button
-  onClick={toggleClouds}
-  className={`text-2xl p-2 rounded-lg transition-colors duration-300 ${
-    showClouds ? " text-white" : "bg-gray-600 hover:bg-gray-700 text-white"
-  }`}
-  title={showClouds ? "Disable Clouds" : "Enable Clouds"}
->
-  {showClouds ? <FiCloud /> : <FiCloudOff />}
-</button>
-
-                        </div>
-                        
+                                    onClick={toggleClouds}
+                                    className={`text-2xl p-2 rounded-lg transition-colors duration-300 ${
+                                        showClouds ? " text-white" : "bg-gray-600 hover:bg-gray-700 text-white"
+                                    }`}
+                                    title={showClouds ? "Disable Clouds" : "Enable Clouds"}
+                                    >
+                                    {showClouds ? <FiCloud /> : <FiCloudOff />}
+                                    </button>
+                       </div>
                         {/* Mobile menu button */}
-                        <div className="md:hidden flex items-center">
+                        <div className="md:hidden  flex items-center">
                             <button
                                 onClick={toggleMobileMenu}
                                 className="inline-flex items-center justify-center p-2 rounded-md text-purple-200 hover:text-white hover:bg-purple-900 focus:outline-none transition duration-150 ease-in-out"

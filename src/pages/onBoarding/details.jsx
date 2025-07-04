@@ -41,7 +41,7 @@ export function Step3Details({ onFinish}) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className="py-8"
+      className="py-4 px-0 md:py-7 md:px-0"
     >
       {/* Title & Subtitle */}
       <motion.h2
@@ -56,7 +56,7 @@ export function Step3Details({ onFinish}) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="text-purple-300 text-center mb-8"
+        className="text-purple-300 text-center mb-4 md:mb-8"
       >
         Help us tailor your experience (all fields optional)
       </motion.p>

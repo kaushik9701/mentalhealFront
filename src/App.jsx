@@ -46,7 +46,9 @@ export default function App() {
       <Route path="/focus" element={isAuthenticated ? <ObjectiveFocusPage /> : <Navigate to="/login" replace />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    <div className="mt-30">
     <Footer />
+    </div>
   </div>
 </BrowserRouter>
 
