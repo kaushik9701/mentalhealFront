@@ -7,18 +7,11 @@ import { FiCloud, FiCloudOff } from "react-icons/fi";
 
 function NavBar({ showClouds, toggleClouds }) {
     const { isAuthenticated } = useSelector(state => state.user);
-    const [scrolled, setScrolled] = useState(false);
+    
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     
     // Add scroll effect for navbar
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 10);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
+   
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
@@ -26,11 +19,8 @@ function NavBar({ showClouds, toggleClouds }) {
     return (
         <>
             {/* Desktop Navigation */}
-            <nav className={`fixed w-full mt-4 z-50 transition-all duration-500 ${
-                scrolled 
-                    ? 'bg-white/10 border border-white/20 rounded-2xl p-3 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(128,0,128,0.3)] backdrop-blur-lg' 
-                    : 'bg-white/10 border border-white/20 shadow-lg rounded-2xl p-3 ring-1 ring-white/10'
-                }`}>
+            <nav className='fixed w-full mt-4 z-50 sm:h-16 h-16 transition-all duration-500 bg-white/10 border border-white/20 rounded-2xl p-3 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(128,0,128,0.3)] backdrop-blur-xl'>
+                    
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center">
