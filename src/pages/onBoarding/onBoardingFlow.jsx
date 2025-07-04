@@ -23,7 +23,7 @@ export function OnboardingFlow({ ob: setShowOnboarding }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 pt-6 md:pt-0">
-      <div className="relative w-full max-w-2xl mx-4 h-[70vh] max-h-[500px]">
+      <div className="relative w-full max-w-2xl mx-4 h-[75vh] max-h-[600px]">
         {/* Progress Bar */}
         <div className="absolute inset-0 rounded-3xl overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-2.5 bg-gray-800 z-10">
