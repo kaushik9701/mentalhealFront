@@ -112,7 +112,7 @@ function NavBar({ showClouds, toggleClouds }) {
                 <div className={`md:hidden overflow-hidden transition-all pt-3 duration-500 ease-in-out ${
                     mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}>
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/10  border border-white/20 shadow-lg rounded-2xl p-3 ring-1 ring-white/10">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/85 border border-white/20 shadow-lg rounded-2xl p-3 ring-1 ring-white/10">
                         <Link 
                             to="/" 
                             className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-purple-300 hover:bg-purple-900/50 transition-colors"
